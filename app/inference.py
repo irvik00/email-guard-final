@@ -5,6 +5,7 @@ from .contract import ROOT, MAX_BYTES, contract, verify_component, unavailable, 
 from normalization_schema import make_model_text
 from day5_common import clean_text
 from read_email import parse_email
+from .categories import suggest_category
 
 
 class InputError(ValueError):
@@ -80,7 +81,7 @@ def safe_metadata(parsed):
             'unsubscribe': {'header_present': unsub['header_present'], 'body_hint_found': unsub['body_hint_found'],
                             'one_click_declared': unsub['one_click_declared'], 'working': None},
             'parser_warnings': parsed['parse_warnings'],
-            'category': {'value': None, 'method': 'not_available'},
+            'category': suggest_category(parsed['subject'], parsed['body_text']),
             'phishing': 'not_evaluated',
             'observations_are_model_explanations': False}
 

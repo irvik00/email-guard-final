@@ -109,14 +109,14 @@
     ".env.example": "27f2bef73a59c27b29966f7c795a7b4019fb5352119f6749113b8314f72a2f01",
     "app/__init__.py": "26f345885edd6a38d0d69d3fd883ae3b92ccfa537fe306c32145be38bc7ca12f",
     "app/contract.py": "362c5fa30dbf2fa1efdfe11972fab27e33edd490296730d37138ede55811ccb4",
-    "app/inference.py": "6ee88d3a97927b6e88dfe738dab60912af079378213ceabc49957719e266c0b5",
+    "app/inference.py": "d5b82b4b0416bc9f75bd2189d2df712ef30581d50b6f588828f287214c70551c",
     "app/laya_worker.py": "119c5bfdf3f699f2003247f36c69d0d14e489bf86875dcd9e8c2c2dd4717d6b9",
     "app/README.md": "237b44859c09b49a3695dbe717af3e1dc542ff0a400fdb017b411b98bdda753f",
     "app/run.py": "8060a5aaff4b4c12860836bbf14132a0bca55c56109c0ff916dd27cba44e76c7",
-    "app/static/api.html": "b548be78cc54337a39b229aab6ddf2d4bd98e8afb4ffdab6a0781a8e4c523fac",
-    "app/static/app.js": "c2dd269f9aff1ecd578fd92ed273af334f4d679a385bacbbdbe9c767867efdec",
-    "app/static/index.html": "da476e9291e8116d143a0f01d5299aafd9be8514fa1661c84632d170e1a98cb5",
-    "app/static/style.css": "aef6a89cd4e3763e2f1ebab9f8e48b398300508e3070cfdd6b0c0128bd4e200b",
+    "app/static/api.html": "82056d1a909d5883e9a175aeb2d1fdc0700ad6861ef44a52122a92c3c870c2f7",
+    "app/static/app.js": "c062b071bf816bb97dce669443702d0154281eab48a43bc55c6035079c9fa02b",
+    "app/static/index.html": "ba7b261e8c971ed4e0b75df2463135f4e1a112b64979e358d4fc65976901635b",
+    "app/static/style.css": "85f50dc34e8068412657e7a683b258829b54ef0205581d371c72cba69d0717d6",
     "app/web.py": "943be232636a07aebf74d3de5f21951a6068dfdc942167543c018e5ebe535b61",
     "app/worker_client.py": "3624a4176a9b63301c7bacea9516b1b2d9e787711439d00ff6fafe887882a4a7",
     "compose.yaml": "8aec38e37461404bd9f8d95061da604cbe7ab445954b626a1cc7abe85c82fc7f",
@@ -126,7 +126,8 @@
     "requirements-app.lock.txt": "d4066bdc3f9bedef032c7479e74ec58043a8ce799eb73806566c7cb6bab69e5c",
     "requirements-docker.lock.txt": "9c1ee1c6cae6d01fe77bb7095784cb8838e975a283afbf3a14da0ff30e2703ae",
     "scripts/build_app_release.py": "b585cac270fdae643dfe822b9817f06663d9501eb2098eeb770143ba7f973d94",
-    "app/deployment_config.py": "f126ca2c368452fd8d67222827a5f6ecd9825f051bf4ae1bc5850bf2920aca0e"
+    "app/deployment_config.py": "f126ca2c368452fd8d67222827a5f6ecd9825f051bf4ae1bc5850bf2920aca0e",
+    "app/categories.py": "624faaaddd2d98e4c4a5082f8593f0d4e668eb4acdf2df25c26b615e7efaa788"
   },
   "verification_files_sha256": {
     "examples/app/demo_01.eml": "568cd95c026a9453cdcce51e8455e0508d128379bce6073a7fc193847721345a",
@@ -144,7 +145,8 @@
     "tests/test_release.py": "db99e97a3f1367538dfd28fe478350d3960ba39301fc8bd49e7841ae505ba001",
     "scripts/smoke_public.py": "ace7e9558bb698279956c1fe37917a0b456e6b6efbf4459d096350cc0f774015",
     "scripts/verify_render_package.py": "0101d1479e1348b2ab12eabf5b77c3175c81c34f4a9699e39f1f4f355ec91641",
-    "tests/test_public_deployment.py": "c965a1e23b2b870cfed9b2ae73cf07171a554da7d8f13472ec8ee6c572bf2963"
+    "tests/test_public_deployment.py": "c965a1e23b2b870cfed9b2ae73cf07171a554da7d8f13472ec8ee6c572bf2963",
+    "tests/test_categories.py": "0d01153346ca6fec138bbac6911c75609aea8256975eb392fe4f1b448337f9d2"
   },
   "trusted_sdk_wheel": {
     "path": "vendor/laya-0.3.20-py3-none-any.whl",
@@ -188,8 +190,19 @@
     "external_fetch": false
   },
   "category": {
-    "method": "not_available",
-    "value": null
+    "method": "keyword_rules_v1",
+    "trained": false,
+    "validated_quality": false,
+    "confidence": null,
+    "affects_spam_decision": false,
+    "labels": [
+      "Реклама",
+      "Предложения работы",
+      "Финансовые сообщения",
+      "Служебные уведомления",
+      "Другое"
+    ],
+    "scope": "Topic hint from subject/body; not consent, phishing or model explanation"
   },
   "phishing_classifier": false,
   "training_performed": false,
@@ -208,5 +221,11 @@
     "public_deployment_verified": false,
     "Linux_noncontainer_HTTP_verified": true,
     "models_and_preprocessing_unchanged": true
+  },
+  "ui_revision": {
+    "utc": "2026-10-19T20:32:30.035072+00:00",
+    "name": "Bright topic-hints interface",
+    "public_Laya_enabled": false,
+    "ML_models_changed": false
   }
 }
