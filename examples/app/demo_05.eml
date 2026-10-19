@@ -1,0 +1,26 @@
+From: Demonstration <sender@example.invalid>
+To: viewer@example.invalid
+Subject: <script>window.demoExecuted=1</script> =?utf-8?b?0JTQtdC80L7QvdGB?=
+ =?utf-8?b?0YLRgNCw0YbQuNGP?= HTML
+List-Unsubscribe: <mailto:unsubscribe@example.invalid>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============4587397032260995813=="
+
+--===============4587397032260995813==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<script>window.demoExecuted=3D2</script><p>Local demo only.</p><a href=3D"htt=
+ps://destination.invalid/check">https://displayed.invalid</a><a href=3D"javas=
+cript:window.demoExecuted=3D3">Open</a><img src=3D"https://external.invalid/t=
+racker.png">Unsubscribe
+
+--===============4587397032260995813==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="<img src=x onerror=alert(4)>.txt"
+MIME-Version: 1.0
+
+Tm9uLWV4ZWN1dGFibGUgc3ludGhldGljIGF0dGFjaG1lbnQu
+
+--===============4587397032260995813==--

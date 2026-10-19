@@ -1,0 +1,8 @@
+test_relative_operator_artifact_root_and_escape (test_release.ReleaseTests.test_relative_operator_artifact_root_and_escape) ... ok
+test_relocated_e0_without_laya_preserves_scores_and_refusals (test_release.ReleaseTests.test_relocated_e0_without_laya_preserves_scores_and_refusals) ... ok
+test_unknown_destination_file_is_not_overwritten (test_release.ReleaseTests.test_unknown_destination_file_is_not_overwritten) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.002s
+
+OK

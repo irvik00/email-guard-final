@@ -1,0 +1,212 @@
+{
+  "version": 2,
+  "created_utc": "2026-10-18T14:56:47.438107+00:00",
+  "source_final_protocol": {
+    "path": "reports/final_evaluation/runs/20261017T132144Z-d663811e/FINAL_EVALUATION_PROTOCOL.json",
+    "sha256": "9bc7e77f7b9c06f64e9660957c0498dc90928450b4322387ade42c532a523b33"
+  },
+  "default": "baseline",
+  "modes": {
+    "baseline": {
+      "components": [
+        "E0"
+      ],
+      "rule": "fixed threshold; zero active features → refusal"
+    },
+    "recall": {
+      "components": [
+        "E0",
+        "Laya_day5"
+      ],
+      "rule": "OR; either refusal/error → no decision"
+    },
+    "review": {
+      "components": [
+        "E0",
+        "Laya_day5"
+      ],
+      "rule": "agreement → result; disagreement/refusal/error → needs_review"
+    }
+  },
+  "components": {
+    "E0": {
+      "name": "E0",
+      "kind": "sklearn",
+      "is_main": true,
+      "bundle_path": "models/day3/baseline_bundle.joblib",
+      "files": {
+        "models/day3/baseline_bundle.joblib": "c8acd768db0733559904f5ed2f216fcc7366b57899fc38084cdf5bdad560c6d3",
+        "models/day3/model_manifest.json": "c275c19d8dfd0dbb10e939256e3f2a36cedbaa5fa8022e73ecbb06364a0bed7a"
+      },
+      "threshold": 0.3037252359712881,
+      "temperature": 1.0,
+      "builder": "day3_original",
+      "score_semantics": "Saved char-LR predict_proba class1, no new calibration, not a personal spam guarantee",
+      "versions": {
+        "scikit-learn": "1.9.1",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "joblib": "1.6.0",
+        "threadpoolctl": "3.7.0"
+      },
+      "threshold_source": "Day3 saved provisional operating threshold"
+    },
+    "Laya_day5": {
+      "name": "Laya_day5",
+      "kind": "laya",
+      "is_main": true,
+      "checkpoint_path": "models/day5/runs/20261012T083529Z-0950e3dc34/adapted_calibrated",
+      "files": {
+        "models/day5/runs/20261012T083529Z-0950e3dc34/adapted_calibrated/model.safetensors": "dceaf1e38cbf53bcef1318bb0b223987b6bba1adb2d8c9fb829e8c3ff540867e",
+        "models/day5/runs/20261012T083529Z-0950e3dc34/adapted_calibrated/rl_agent_config.json": "9cb0b6e76337016b4aa153c063e4c342927465f76889062d5a51ff20c6146fed",
+        "models/day5/runs/20261012T083529Z-0950e3dc34/adapted_calibrated/encoder/config.json": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4",
+        "models/day5/runs/20261012T083529Z-0950e3dc34/adapted_calibrated/tokenizer/tokenizer.json": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f",
+        "models/day5/runs/20261012T083529Z-0950e3dc34/adapted_calibrated/tokenizer/tokenizer_config.json": "6c6b2d8e3c84ce0e671c129cd6b374b235d6f9863042a5836358d00a89bbb5a1",
+        "models/day5/runs/20261012T083529Z-0950e3dc34/candidate_manifest.json": "026e3f9dae3ab24161720ba28573d746705f434a7aa5cfe73b17ee214b2b16e9"
+      },
+      "threshold": 0.5228186297984043,
+      "temperature": 0.8553398254508641,
+      "questions": {
+        "spam": {
+          "type": "noul",
+          "instructions": "Is this message unsolicited spam?"
+        }
+      },
+      "input_contract": {
+        "builder": "clean_builder_v2",
+        "context_limit": 1024,
+        "head_max_len": 256,
+        "state_token_cap": 700,
+        "mask_policy": "replace tokenizer mask literal with space before offset-token prefix; same for all candidates"
+      },
+      "builder": "clean_builder_v2",
+      "versions": {
+        "laya": "0.3.20",
+        "torch": "2.10.0+cu130",
+        "transformers": "5.19.0",
+        "tokenizers": "0.23.3",
+        "huggingface_hub": "2.2.0",
+        "safetensors": "0.8.0"
+      },
+      "score_semantics": "Unrounded softmax true-option probability from Laya noul logits / saved calibration T; SDK noul is rounded4",
+      "threshold_source": "models/day5/runs/20261012T083529Z-0950e3dc34/candidate_manifest.json candidates.adapted",
+      "selected_training_step": 300
+    }
+  },
+  "shared_preprocessing_sha256": {
+    "src/read_email.py": "75de873ed9bc2816e4ea6ea6d809bcbc314ce5f13f7afdc9cac00ada7e7b2d25",
+    "src/normalization_schema.py": "bd4daf6296a6eeddef4f52c64609d875c15c1df436dcbd2f9c63be6d2e07cd2b",
+    "src/day5_common.py": "8b9545d1bf67511d14b0fdc86f376958a6228553748caec9b4517b776d0fcc2a",
+    "src/day5_laya_runtime.py": "fdc7b05b03d3c71a862a281b05b7cee807cb03845d147211ea25c7ab09a539e3",
+    "src/decision_protocol.py": "9d0122b81a5755ceaae3f14b3cc756f98596994bb74949995644307e3b8a1424",
+    "src/final_eval_common.py": "5c9f188e20ce54989f6fee983458d6954ec9792844674922c14d87ae361e1625",
+    "src/predict_email.py": "ede5503b2f5a0a0925093c7ef3852b2bca058bc094ba5e91dd6a88994a636307",
+    "src/baseline_common.py": "d53186a9f442602c5002173798b40ac0c7437b07da3b3b089cdd8c3fde46ccb3",
+    "config/day4_experiments.json": "0130f322f21a6b697f24b8319ab9cc0801f5bb2114c37e09aa37694a04fe7244"
+  },
+  "application_files_sha256": {
+    ".dockerignore": "622362bf11d68c83737ba79ce8c77352d92c17cb512f817cab0efd794580a53a",
+    ".env.example": "27f2bef73a59c27b29966f7c795a7b4019fb5352119f6749113b8314f72a2f01",
+    "app/__init__.py": "26f345885edd6a38d0d69d3fd883ae3b92ccfa537fe306c32145be38bc7ca12f",
+    "app/contract.py": "362c5fa30dbf2fa1efdfe11972fab27e33edd490296730d37138ede55811ccb4",
+    "app/inference.py": "6ee88d3a97927b6e88dfe738dab60912af079378213ceabc49957719e266c0b5",
+    "app/laya_worker.py": "119c5bfdf3f699f2003247f36c69d0d14e489bf86875dcd9e8c2c2dd4717d6b9",
+    "app/README.md": "237b44859c09b49a3695dbe717af3e1dc542ff0a400fdb017b411b98bdda753f",
+    "app/run.py": "8060a5aaff4b4c12860836bbf14132a0bca55c56109c0ff916dd27cba44e76c7",
+    "app/static/api.html": "b548be78cc54337a39b229aab6ddf2d4bd98e8afb4ffdab6a0781a8e4c523fac",
+    "app/static/app.js": "c2dd269f9aff1ecd578fd92ed273af334f4d679a385bacbbdbe9c767867efdec",
+    "app/static/index.html": "da476e9291e8116d143a0f01d5299aafd9be8514fa1661c84632d170e1a98cb5",
+    "app/static/style.css": "aef6a89cd4e3763e2f1ebab9f8e48b398300508e3070cfdd6b0c0128bd4e200b",
+    "app/web.py": "943be232636a07aebf74d3de5f21951a6068dfdc942167543c018e5ebe535b61",
+    "app/worker_client.py": "3624a4176a9b63301c7bacea9516b1b2d9e787711439d00ff6fafe887882a4a7",
+    "compose.yaml": "8aec38e37461404bd9f8d95061da604cbe7ab445954b626a1cc7abe85c82fc7f",
+    "Dockerfile": "c0715937ec3857326d82c7193c11db02ec859da30126ee76b7e123d05b93ccaa",
+    "requirements-app-laya.lock.txt": "bbd0aed3214c77249e7931087947d49d832f7b42b6b1b95c264011b91f548dd2",
+    "requirements-app.in": "ad24fe809f0ca04aa6ca19733c4df2d216442a350b12dd6d996e017f53a5c10e",
+    "requirements-app.lock.txt": "d4066bdc3f9bedef032c7479e74ec58043a8ce799eb73806566c7cb6bab69e5c",
+    "requirements-docker.lock.txt": "9c1ee1c6cae6d01fe77bb7095784cb8838e975a283afbf3a14da0ff30e2703ae",
+    "scripts/build_app_release.py": "b585cac270fdae643dfe822b9817f06663d9501eb2098eeb770143ba7f973d94",
+    "app/deployment_config.py": "f126ca2c368452fd8d67222827a5f6ecd9825f051bf4ae1bc5850bf2920aca0e"
+  },
+  "verification_files_sha256": {
+    "examples/app/demo_01.eml": "568cd95c026a9453cdcce51e8455e0508d128379bce6073a7fc193847721345a",
+    "examples/app/demo_02.eml": "29cfa49bf0888d177ad77f51a48bc9327215c5a92f3623ea810ef867397b8942",
+    "examples/app/demo_03.eml": "3d52f92d71057a1231192f301e456943a2e0f2988ba7d42eef764dc4758e2058",
+    "examples/app/demo_04.eml": "c25644b4e0ca9cdd851d87c0be337c5f9ec3c66708e96659e6d84e049a41e3ea",
+    "examples/app/demo_05.eml": "2f4248a620601bb4a9665532da13114a2d9eab5836ccb50fb1361fcd97cae60d",
+    "examples/app/demo_06.eml": "a6b265b86971070002efdf708e7f00d6466bcd73bd637d9bf8eb8b0c1a831bcc",
+    "examples/app/README.md": "aba9f759109a990d245d25b8752e7c54701352291c0a6ec6975514293784cbb5",
+    "scripts/audit_app.py": "b8b33f9e87ab90ea60ddc63b2ef6962fbe7de843f94ab5a18be6d45fbc6fd7f3",
+    "scripts/prepare_model_artifacts.py": "fdcd8aed2df50d39ab136d9f50d0f5de8ce088d12e9ef60eac70238971195147",
+    "scripts/smoke_release.py": "389f15adb5b09b8387b469e0fb284ee7a1cd896f3a2dcd9bcb4843a34843f03a",
+    "scripts/verify_app.py": "8c9b8ad2ffb23445c88fa7efdb517b777c2f5490b5c35935cb472e6196c405bb",
+    "tests/test_app.py": "dfb1bbfbe39f3e52d9159c46210e663f6f0b9988456f86b3fb76441cff82614f",
+    "tests/test_release.py": "db99e97a3f1367538dfd28fe478350d3960ba39301fc8bd49e7841ae505ba001",
+    "scripts/smoke_public.py": "ace7e9558bb698279956c1fe37917a0b456e6b6efbf4459d096350cc0f774015",
+    "scripts/verify_render_package.py": "0101d1479e1348b2ab12eabf5b77c3175c81c34f4a9699e39f1f4f355ec91641",
+    "tests/test_public_deployment.py": "c965a1e23b2b870cfed9b2ae73cf07171a554da7d8f13472ec8ee6c572bf2963"
+  },
+  "trusted_sdk_wheel": {
+    "path": "vendor/laya-0.3.20-py3-none-any.whl",
+    "sha256": "6039e802fa5effb8dd492061cd7ad39a43087beadc4a4fa4a649614e77eb83d4"
+  },
+  "runtime": {
+    "web_e0": {
+      "windows": ".venv-app/Scripts/python.exe",
+      "posix": ".venv-app/bin/python"
+    },
+    "neural": {
+      "windows": ".venv-decision/Scripts/python.exe",
+      "posix": ".venv-decision/bin/python"
+    },
+    "operator_configuration": {
+      "EMAIL_GUARD_ARTIFACT_ROOT": "artifacts mount root; relative IDs and hashes fixed",
+      "EMAIL_GUARD_LAYA_PYTHON": "trusted local runtime interpreter only; never accepted via API",
+      "EMAIL_GUARD_HOST": "127.0.0.1 locally;0.0.0.0 inside Docker/Render"
+    },
+    "docker_verified": false,
+    "docker_gpu_profile": false,
+    "neural_runtime_policy": "Existing trusted local CUDA environment used read-only; separate app dependency freeze; no research dependencies modified",
+    "python": "3.12.4",
+    "device": "cuda",
+    "cpu_threads": 1,
+    "uvicorn_workers": 1,
+    "parallel_analysis": 2,
+    "parallel_neural": 1,
+    "neural_timeout_seconds": 60,
+    "neural_startup_timeout_seconds": 180,
+    "neural_queue_wait_seconds": 1,
+    "automatic_restart": false,
+    "cpu_fallback": false
+  },
+  "uploads": {
+    "max_bytes": 10485760,
+    "stream_checked": true,
+    "persistence": false,
+    "filename_in_model_or_path": false,
+    "raw_email_html_rendered": false,
+    "external_fetch": false
+  },
+  "category": {
+    "method": "not_available",
+    "value": null
+  },
+  "phishing_classifier": false,
+  "training_performed": false,
+  "held_out_inference_performed": false,
+  "closed_records_parsed_for_app_verification": false,
+  "preservation_hashing": "Old report/code/config/doc bytes hashed without record decoding; model sizes/mtimes plus deployed weight SHA256 checked",
+  "ensemble_probability": null,
+  "scores_averaged": false,
+  "deployment_adaptation": {
+    "prepared_utc": "2026-10-19T15:21:29.531336+00:00",
+    "profile": "Render CPU E0",
+    "original_zip_sha256": "cf4b6f8f6d15eadea8de51d303bf25295b15a1d43bd8306c10398fcf0f5b26a2",
+    "public_host_configuration": "exact HTTPS origin from RENDER_EXTERNAL_URL or EMAIL_GUARD_PUBLIC_URL",
+    "PORT": "operator/Render environment, local default 8000",
+    "container_execution_verified": false,
+    "public_deployment_verified": false,
+    "Linux_noncontainer_HTTP_verified": true,
+    "models_and_preprocessing_unchanged": true
+  }
+}

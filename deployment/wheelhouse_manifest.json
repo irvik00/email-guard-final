@@ -1,0 +1,152 @@
+{
+  "platform": "linux/amd64",
+  "python": "3.12",
+  "wheels": {
+    "annotated_doc-0.0.5-py3-none-any.whl": {
+      "sha256": "117bac03a25ede5df5440e855b32d556049ca169ead221505badf432fed4b101",
+      "bytes": 5302,
+      "name": "annotated-doc",
+      "version": "0.0.5"
+    },
+    "annotated_types-0.8.0-py3-none-any.whl": {
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+      "bytes": 13427,
+      "name": "annotated-types",
+      "version": "0.8.0"
+    },
+    "anyio-4.15.1-py3-none-any.whl": {
+      "sha256": "6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101",
+      "bytes": 132079,
+      "name": "anyio",
+      "version": "4.15.1"
+    },
+    "certifi-2026.7.22-py3-none-any.whl": {
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "bytes": 136983,
+      "name": "certifi",
+      "version": "2026.7.22"
+    },
+    "click-8.5.0-py3-none-any.whl": {
+      "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+      "bytes": 125251,
+      "name": "click",
+      "version": "8.5.0"
+    },
+    "cloudpickle-3.1.2-py3-none-any.whl": {
+      "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a",
+      "bytes": 22228,
+      "name": "cloudpickle",
+      "version": "3.1.2"
+    },
+    "fastapi-0.144.0-py3-none-any.whl": {
+      "sha256": "ce62d92f1abe5e06f9111a3d39c675340d440ee7095beab06ec31fee7c070a71",
+      "bytes": 144899,
+      "name": "fastapi",
+      "version": "0.144.0"
+    },
+    "h11-0.16.0-py3-none-any.whl": {
+      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86",
+      "bytes": 37515,
+      "name": "h11",
+      "version": "0.16.0"
+    },
+    "httpcore-1.0.9-py3-none-any.whl": {
+      "sha256": "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55",
+      "bytes": 78784,
+      "name": "httpcore",
+      "version": "1.0.9"
+    },
+    "httpx-0.28.1-py3-none-any.whl": {
+      "sha256": "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad",
+      "bytes": 73517,
+      "name": "httpx",
+      "version": "0.28.1"
+    },
+    "idna-3.20-py3-none-any.whl": {
+      "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+      "bytes": 69583,
+      "name": "idna",
+      "version": "3.20"
+    },
+    "joblib-1.6.0-py3-none-any.whl": {
+      "sha256": "3dbbf9f6e4b592a2357b854608e980fe6390d131d7a82f011a377ef2ebef7aba",
+      "bytes": 306115,
+      "name": "joblib",
+      "version": "1.6.0"
+    },
+    "narwhals-2.27.1-py3-none-any.whl": {
+      "sha256": "d057df13f5852b8e157596e82eb5e955fad267425df5e420e0ee9863da483b31",
+      "bytes": 483211,
+      "name": "narwhals",
+      "version": "2.27.1"
+    },
+    "numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": {
+      "sha256": "fbde6962867ee75b48b0ee29b2b9372ec5d617799dbaf38e82dc0596f2f7738a",
+      "bytes": 16727283,
+      "name": "numpy",
+      "version": "2.5.4"
+    },
+    "opentelemetry_api-1.45.1-py3-none-any.whl": {
+      "sha256": "b31553efa588ae44bc306f863c785c5333a9ecc091248c6ee68b4b6c87fdedfb",
+      "bytes": 60256,
+      "name": "opentelemetry-api",
+      "version": "1.45.1"
+    },
+    "pydantic-2.14.1-py3-none-any.whl": {
+      "sha256": "9195d967ec791692a04438115466764fb8b9a27b31f14a760437694f40d6b454",
+      "bytes": 488106,
+      "name": "pydantic",
+      "version": "2.14.1"
+    },
+    "pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": {
+      "sha256": "93ba4e9d8210d941c200431a56b2c0400b131865947903937ed3ec5404307d2e",
+      "bytes": 2160157,
+      "name": "pydantic-core",
+      "version": "2.50.1"
+    },
+    "scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": {
+      "sha256": "e5d7b18a5b9dca241a74695f3275fa4c895a9dadc72b3d8df5fa9d1083c9b83e",
+      "bytes": 9166043,
+      "name": "scikit-learn",
+      "version": "1.9.1"
+    },
+    "scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": {
+      "sha256": "f55fa87b6c612ecd6b058f167c53231b1d14e412efe361d3d6e38b3631c73218",
+      "bytes": 35344199,
+      "name": "scipy",
+      "version": "1.18.1"
+    },
+    "starlette-1.8.0-py3-none-any.whl": {
+      "sha256": "dfdd6b29c26483288088d990eee59631dedadd66ce20d203402a7ca8e3c4656f",
+      "bytes": 79612,
+      "name": "starlette",
+      "version": "1.8.0"
+    },
+    "threadpoolctl-3.7.0-py3-none-any.whl": {
+      "sha256": "cd8b60b5641b45c67bbf73c64c843235fc2d8a480c87389f52f5dbee893b86be",
+      "bytes": 26362,
+      "name": "threadpoolctl",
+      "version": "3.7.0"
+    },
+    "typing_extensions-4.16.0-py3-none-any.whl": {
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "bytes": 45571,
+      "name": "typing-extensions",
+      "version": "4.16.0"
+    },
+    "typing_inspection-0.4.4-py3-none-any.whl": {
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147",
+      "bytes": 14750,
+      "name": "typing-inspection",
+      "version": "0.4.4"
+    },
+    "uvicorn-0.54.0-py3-none-any.whl": {
+      "sha256": "505bdb0f318731d45f1f712071fc781a8981f6847a31c902c9f5e652d4f67faf",
+      "bytes": 87427,
+      "name": "uvicorn",
+      "version": "0.54.0"
+    }
+  },
+  "total_bytes": 65828660,
+  "note": "Cross-platform pip download and metadata/hash checks only; Linux installation and Docker build not executed here"
+}

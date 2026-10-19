@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Email Guard</title><link rel="stylesheet" href="/assets/style.css"><script src="/assets/app.js" defer></script></head>
+<body><main>
+<header><span class="tag">УЧЕБНОЕ ДЕМО · EMAIL GUARD</span><h1>Проверить письмо</h1><p>Письмо отправляется на сервер этого сервиса и обрабатывается в памяти. Приложение не сохраняет письмо. Для публичного демо используйте вымышленные примеры без личных данных.</p><p>В CPU-демо работает baseline E0. Режимы с Laya доступны в отдельно подготовленном локальном запуске.</p></header>
+<section class="panel"><p id="health" role="status">Проверяем готовность…</p><form id="form">
+<label for="email">Одно письмо .eml · до 10 MiB</label><input id="email" type="file" accept=".eml,message/rfc822" required>
+<label for="mode">Режим</label><select id="mode"><option value="baseline" selected>baseline — E0, основной режим</option><option value="recall">recall — E0 ИЛИ Laya</option><option value="review">review — решение при согласии</option></select>
+<p id="mode-note" class="muted"></p><button id="submit" type="submit">Анализировать</button></form></section>
+<section id="result" class="panel" hidden aria-live="polite"></section>
+<footer>«Обычное» — результат классификации спама, а не гарантия безопасности. Подлинность отправителя и фишинг этими моделями не подтверждаются. <a href="/api-docs">Документация API</a></footer>
+</main></body></html>

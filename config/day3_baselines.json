@@ -1,0 +1,16 @@
+{
+  "experiment_version": 1,
+  "seed": 42,
+  "manifest": "data/processed/splits/manifest.json",
+  "expected": {"train": {"rows": 5953, "classes": {"0": 4502, "1": 1451}}, "validation": {"rows": 1275, "classes": {"0": 964, "1": 311}}},
+  "models": ["word_nb", "word_lr", "char_lr"],
+  "tfidf": {"lowercase": true, "sublinear_tf": true, "norm": "l2", "stop_words": null},
+  "word": {"ngram_range": [1, 2], "min_df": 2, "max_features": 80000},
+  "char": {"analyzer": "char_wb", "ngram_range": [3, 5], "min_df": 3, "max_features": 150000},
+  "nb": {"alpha": 1.0},
+  "lr": {"C": 1.0, "solver": "liblinear", "l1_ratio": 0.0, "max_iter": 2000, "random_state": 42, "class_weight": null, "tol": 0.0001},
+  "cv": {"fallback_folds": 5, "selection_threshold": 0.5, "tie_tolerance": 1e-12, "tie_preference": ["word_lr", "char_lr", "word_nb"]},
+  "threshold": {"default": 0.5, "conservative_fpr_max": 0.01},
+  "runtime": {"threads": 1, "convergence_max_iter_cap": 32000, "reload_sample_size": 20},
+  "smoke_eml": "data/examples/service_notice.eml"
+}

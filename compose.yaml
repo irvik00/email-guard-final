@@ -1,0 +1,29 @@
+name: email-guard
+services:
+  email-guard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: email-guard:cpu-release
+    platform: linux/amd64
+    ports:
+      - "127.0.0.1:${EMAIL_GUARD_PORT:-8000}:8000"
+    environment:
+      EMAIL_GUARD_DISABLE_LAYA: "1"
+      EMAIL_GUARD_ARTIFACT_ROOT: /artifacts
+      EMAIL_GUARD_HOST: 0.0.0.0
+    volumes:
+      - type: bind
+        source: ${EMAIL_GUARD_ARTIFACTS_DIR:-./artifacts}
+        target: /artifacts
+        read_only: true
+        bind:
+          create_host_path: false
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: "no"

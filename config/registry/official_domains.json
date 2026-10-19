@@ -1,0 +1,43 @@
+{
+  "version": "2026-10-12-v1",
+  "checked_at": "2026-10-12T10:00:00Z",
+  "scope": "Three public bank examples; incomplete local research snapshot, never an exhaustive allowlist",
+  "idna": "Python stdlib IDNA2003, as existing parser; not full UTS46/IDNA2008",
+  "brands": [
+    {
+      "brand_id": "sber",
+      "aliases": ["сбер", "сбербанк", "sber", "sberbank"],
+      "official_web_domains": ["sberbank.ru"],
+      "confirmed_mail_domains": [],
+      "mail_domain_state": "unknown",
+      "source_url": "https://research.sberbank.ru/assets/conditions-sber-research.BEQKfQO0.pdf",
+      "checked_at": "2026-10-12",
+      "confidence": "official web domain explicitly named in bank's public terms; no mail domain evidence recorded",
+      "provenance": "Official Sber research terms identify www.sberbank.ru as the bank website; public source only, no email links visited"
+    },
+    {
+      "brand_id": "vtb",
+      "aliases": ["втб", "vtb"],
+      "official_web_domains": ["vtb.ru"],
+      "confirmed_mail_domains": ["vtb.ru"],
+      "mail_domain_state": "published_contact_domain_only",
+      "source_url": "https://www.vtb.ru/about/contacts/",
+      "checked_at": "2026-10-12",
+      "confidence": "Official contact page publishes a contact mailbox in vtb.ru",
+      "provenance": "Published contact mailbox establishes this domain's public use; does not authenticate any message or enumerate all legitimate mailing providers"
+    },
+    {
+      "brand_id": "alfa",
+      "aliases": ["альфа-банк", "альфа банк", "alfa-bank", "alfa bank", "alfabank"],
+      "official_web_domains": ["alfabank.ru"],
+      "confirmed_mail_domains": ["alfabank.ru"],
+      "mail_domain_state": "published_contact_domain_only",
+      "source_url": "https://alfabank.ru/essential/",
+      "checked_at": "2026-10-12",
+      "confidence": "Official bank details page publishes a contact mailbox in alfabank.ru",
+      "provenance": "Published contact domain only; not an exhaustive mailing-domain registry, SPF/DKIM assertion or proof of sender identity"
+    }
+  ],
+  "authentication_sources": ["https://www.rfc-editor.org/rfc/rfc8601.txt", "https://www.rfc-editor.org/rfc/rfc7489"],
+  "authentication_scope": "RFC7489 historical alignment reference requested in task; RFC Editor currently marks it obsolete. Module verifies no live authentication and implements no DMARC policy engine."
+}

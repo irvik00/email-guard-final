@@ -1,0 +1,9 @@
+From: Demonstration <sender@example.invalid>
+To: viewer@example.invalid
+Subject: Appointment confirmation
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Your requested appointment is confirmed for Monday at 10:00. This message res=
+ponds to your booking. No action is required.

@@ -1,0 +1,28 @@
+{
+  "pipeline_version": 1,
+  "schema_version": 2,
+  "seed": 42,
+  "raw_dir": "data/raw",
+  "interim_dir": "data/interim",
+  "processed_dir": "data/processed",
+  "reports_dir": "reports",
+  "normalization": {"russian_max_per_class": 20000, "max_record_bytes": 20971520, "trial_limit": 20},
+  "archive": {"path": "untroubled/2025.7z", "max_uncompressed_bytes": 1073741824, "max_members": 200000},
+  "duplicates": {"comparison": "NFC, casefold, NFC, LF, collapse Unicode whitespace", "near_min_chars": 120, "shingle_chars": 5, "jaccard_min": 0.95, "length_ratio_min": 0.90, "lsh_threshold": 0.85, "num_perm": 128},
+  "splits": {
+    "fractions": {"train": 0.70, "validation": 0.15, "test": 0.15},
+    "modern_test_periods": ["2026-09"],
+    "modern_test_status": "security_blocked",
+    "modern_test_archive": "data/raw/untroubled/2026-09.7z",
+    "modern_test_block_reason": "User reports Microsoft Defender blocked and removed this archive; do not download, restore, read or change protection settings",
+    "modern_test_period_basis": "requested September 2026 archive is security_blocked; no substitution",
+    "modern_period_challenge_periods": ["2025-09"],
+    "modern_train_periods": ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08"],
+    "modern_reserve_periods": ["2025-10", "2025-11", "2025-12", "2026-01"],
+    "protected_nazario_file": "phishing-2025.txt",
+    "cv_folds": 5
+  },
+  "quality_review": {
+    "groups": {"dup:e662702244224927715974b4834d7bb50e669122ef3a31d286b34437f6e73226": "needs_review: common source payload noise; see reports/decoding_and_group_audit.md"}
+  }
+}

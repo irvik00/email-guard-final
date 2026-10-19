@@ -1,0 +1,15 @@
+# Publish only this prepared copy, never the research project/data directory.
+.env
+.env.*
+!.env.example
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+data/
+*.log
+reports/deployment/public-smoke-*.json
+!reports/deployment/public-smoke-*-linux-cpu-*.json
+# Keep deployment/wheelhouse-linux/*.whl: the locked offline Docker build uses them.

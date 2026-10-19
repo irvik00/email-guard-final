@@ -1,0 +1,25 @@
+D:\Study\MLSecOps\final\email_guard\.venv-app\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_cross_origin_upload_forbidden_and_csp (test_app.APIBoundaryTests.test_cross_origin_upload_forbidden_and_csp) ... ok
+test_declared_oversize_unsupported_mime_empty_error (test_app.APIBoundaryTests.test_declared_oversize_unsupported_mime_empty_error) ... ok
+test_documented_raw_binary_endpoint (test_app.APIBoundaryTests.test_documented_raw_binary_endpoint) ... ok
+test_filename_header_cannot_leak_into_model_or_storage (test_app.APIBoundaryTests.test_filename_header_cannot_leak_into_model_or_storage) ... ok
+test_html_output_is_inert_and_raw_body_not_html_response (test_app.APIBoundaryTests.test_html_output_is_inert_and_raw_body_not_html_response) ... ok
+test_readiness_and_component_unavailability (test_app.APIBoundaryTests.test_readiness_and_component_unavailability) ... ok
+test_stream_limit_without_content_length (test_app.APIBoundaryTests.test_stream_limit_without_content_length) ... ok
+test_unknown_mode_and_arbitrary_model_path_rejected (test_app.APIBoundaryTests.test_unknown_mode_and_arbitrary_model_path_rejected) ... ok
+test_busy_neural_slot_is_a_refusal (test_app.NeuralBoundaryTests.test_busy_neural_slot_is_a_refusal) ... ok
+test_worker_timeout_stops_own_process_and_never_falls_back (test_app.NeuralBoundaryTests.test_worker_timeout_stops_own_process_and_never_falls_back) ... ok
+test_empty_binary_invalid_and_recoverable_warning (test_app.ParserTests.test_empty_binary_invalid_and_recoverable_warning) ... ok
+test_empty_features_produce_no_decision_on_real_e0 (test_app.ParserTests.test_empty_features_produce_no_decision_on_real_e0) ... ok
+test_exact_two_builders_and_filter_header_removal (test_app.ParserTests.test_exact_two_builders_and_filter_header_removal) ... ok
+test_all_binary_votes_and_review_disagreement (test_app.VotingTests.test_all_binary_votes_and_review_disagreement) ... ok
+test_boolean_or_missing_prediction_not_a_binary_integer (test_app.VotingTests.test_boolean_or_missing_prediction_not_a_binary_integer) ... ok
+test_either_component_failure_never_ham_even_when_other_says_spam (test_app.VotingTests.test_either_component_failure_never_ham_even_when_other_says_spam) ... ok
+test_engine_baseline_does_not_call_missing_neural (test_app.VotingTests.test_engine_baseline_does_not_call_missing_neural) ... ok
+test_engine_component_exception_is_explicit (test_app.VotingTests.test_engine_component_exception_is_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.221s
+
+OK

@@ -1,0 +1,52 @@
+{
+  "stage": "actual_clean_submission_windows_run",
+  "host": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "logical_cpus": 28,
+  "physical_cpus": 20,
+  "ram_bytes": 34185789440,
+  "python_web": "3.12.4",
+  "release_process_samples": [
+    {
+      "pid": 4044,
+      "rss_bytes": 195837952,
+      "command_mode": "E0_Laya",
+      "children": 3
+    },
+    {
+      "pid": 16876,
+      "rss_bytes": 4419584,
+      "command_mode": "E0_Laya",
+      "children": 4
+    },
+    {
+      "pid": 33424,
+      "rss_bytes": 4395008,
+      "command_mode": "E0_only",
+      "children": 1
+    },
+    {
+      "pid": 36488,
+      "rss_bytes": 196214784,
+      "command_mode": "E0_only",
+      "children": 0
+    }
+  ],
+  "rss_scope": "RSS sample after six synthetic .eml; no high-load or 10MiB worst-case memory test",
+  "docker_cli_path": null,
+  "docker_known_exe_exists": false,
+  "docker_desktop_exists": false,
+  "wsl_probe_exit": 1,
+  "wsl_probe_message": "Этот подсистема Windows для Linux не установлен. Для установки выполните команду \"wsl.exe --install\".\r\r\nДополнительные сведения см. в https://aka.ms/wslinstall",
+  "docker_build_performed": false,
+  "docker_container_run_performed": false,
+  "linux_wheels_prepared": 24,
+  "linux_wheels_bytes": 65828660,
+  "local_release_cpu_smoke_checks": 30,
+  "local_release_smoke_checks": {
+    "cpu_first": 30,
+    "cpu_restart": 30,
+    "laya_all_modes": 54
+  },
+  "model_tuning_or_full_benchmark": false
+}

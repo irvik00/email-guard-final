@@ -1,0 +1,725 @@
+{
+  "status": "completed",
+  "run_id": "20261011T110222Z-8b19548aea-6c869e96",
+  "selected_baseline": "char_lr",
+  "artifacts": {
+    "baseline_bundle.joblib": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/baseline_bundle.joblib",
+      "sha256": "c8acd768db0733559904f5ed2f216fcc7366b57899fc38084cdf5bdad560c6d3",
+      "size_bytes": 2474353
+    },
+    "char_lr.joblib": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/char_lr.joblib",
+      "sha256": "2020ac91bb9c22c38e52c90643bafca760aecaf1e8d8f055ed9fa14e52f06188",
+      "size_bytes": 2471905
+    },
+    "char_lr_feature_names.json": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/char_lr_feature_names.json",
+      "sha256": "863f9957e9982e1cb1afcd0c4a72100cc690fac2bcfa9060eb59b78813858dfc",
+      "size_bytes": 1698656
+    },
+    "threshold_config.json": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/threshold_config.json",
+      "sha256": "d3816a4f26c4fc2133f4cb5953fbd401b5b1b8499562304199f3828d4e727542",
+      "size_bytes": 6772
+    },
+    "word_lr.joblib": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/word_lr.joblib",
+      "sha256": "8af9c8f1c49218dc142a87d4a43510847dfe89ad9dc061c7c4f525f85735352e",
+      "size_bytes": 1555745
+    },
+    "word_lr_feature_names.json": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/word_lr_feature_names.json",
+      "sha256": "903db6e05969cc58adb57ea20dd7d1305e1c893cc29775798f651fa332592d08",
+      "size_bytes": 1335086
+    },
+    "word_nb.joblib": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/word_nb.joblib",
+      "sha256": "dd62d8afecddeffd3cf4573792b70eb42b53bf178a3b7f41550612312f8a4e0b",
+      "size_bytes": 2752174
+    },
+    "word_nb_feature_names.json": {
+      "path": "models/day3/runs/20261011T110222Z-8b19548aea-6c869e96/word_nb_feature_names.json",
+      "sha256": "903db6e05969cc58adb57ea20dd7d1305e1c893cc29775798f651fa332592d08",
+      "size_bytes": 1335086
+    }
+  },
+  "classes": [
+    0,
+    1
+  ],
+  "threshold_policy": "conservative_validation_fpr_1pct",
+  "threshold": 0.3037252359712881,
+  "input_fingerprints": {
+    "train": {
+      "path": "data/processed/splits/spam_email/train.jsonl",
+      "sha256": "1b5c523cb98c6d0670c5deca0d7e1b0ba96a2f2a7614451cfa0574a0678ee1c3",
+      "size_bytes": 52281191,
+      "rows": 5953,
+      "classes": {
+        "0": 4502,
+        "1": 1451
+      },
+      "sources": {
+        "lingspam": 1947,
+        "spamassassin": 4006
+      }
+    },
+    "validation": {
+      "path": "data/processed/splits/spam_email/validation.jsonl",
+      "sha256": "47129ff6eca4bc76ffa83960fe619d95c698b7ee80cfd5471d3552dd89bd510d",
+      "size_bytes": 10349407,
+      "rows": 1275,
+      "classes": {
+        "0": 964,
+        "1": 311
+      },
+      "sources": {
+        "spamassassin": 858,
+        "lingspam": 417
+      }
+    }
+  },
+  "preparation_manifest_sha256": "78de07ad3f943a7ef9a26b2a6a63ef5ead3326b1e72fb828493a2d5ffdb54578",
+  "config": {
+    "experiment_version": 1,
+    "seed": 42,
+    "manifest": "data/processed/splits/manifest.json",
+    "expected": {
+      "train": {
+        "rows": 5953,
+        "classes": {
+          "0": 4502,
+          "1": 1451
+        }
+      },
+      "validation": {
+        "rows": 1275,
+        "classes": {
+          "0": 964,
+          "1": 311
+        }
+      }
+    },
+    "models": [
+      "word_nb",
+      "word_lr",
+      "char_lr"
+    ],
+    "tfidf": {
+      "lowercase": true,
+      "sublinear_tf": true,
+      "norm": "l2",
+      "stop_words": null
+    },
+    "word": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_features": 80000
+    },
+    "char": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 3,
+      "max_features": 150000
+    },
+    "nb": {
+      "alpha": 1.0
+    },
+    "lr": {
+      "C": 1.0,
+      "solver": "liblinear",
+      "l1_ratio": 0.0,
+      "max_iter": 2000,
+      "random_state": 42,
+      "class_weight": null,
+      "tol": 0.0001
+    },
+    "cv": {
+      "fallback_folds": 5,
+      "selection_threshold": 0.5,
+      "tie_tolerance": 1e-12,
+      "tie_preference": [
+        "word_lr",
+        "char_lr",
+        "word_nb"
+      ]
+    },
+    "threshold": {
+      "default": 0.5,
+      "conservative_fpr_max": 0.01
+    },
+    "runtime": {
+      "threads": 1,
+      "convergence_max_iter_cap": 32000,
+      "reload_sample_size": 20
+    },
+    "smoke_eml": "data/examples/service_notice.eml"
+  },
+  "config_sha256": "8b19548aea945c456c1b443bef60df5b381364effa4aec49066568fc9415be88",
+  "code_sha256": {
+    "src/baseline_common.py": "d53186a9f442602c5002173798b40ac0c7437b07da3b3b089cdd8c3fde46ccb3",
+    "src/train_baselines.py": "e7da91f6df872e175920e09d62ea2b37f9e2b2b6432e1fce309ee48647b9a976",
+    "src/baseline_reporting.py": "80bcf6345e9bd76340cb6c07149d911247765324af355227f04aa0f4a6ef89ce",
+    "src/predict_email.py": "ede5503b2f5a0a0925093c7ef3852b2bca058bc094ba5e91dd6a88994a636307",
+    "src/read_email.py": "75de873ed9bc2816e4ea6ea6d809bcbc314ce5f13f7afdc9cac00ada7e7b2d25",
+    "src/normalization_schema.py": "bd4daf6296a6eeddef4f52c64609d875c15c1df436dcbd2f9c63be6d2e07cd2b"
+  },
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  },
+  "parameters": {
+    "word_nb": {
+      "memory": null,
+      "steps": [
+        [
+          "tfidf",
+          {
+            "class": "sklearn.feature_extraction.text.TfidfVectorizer",
+            "params": {
+              "analyzer": "word",
+              "binary": false,
+              "decode_error": "strict",
+              "dtype": "numpy.float64",
+              "encoding": "utf-8",
+              "input": "content",
+              "lowercase": true,
+              "max_df": 1.0,
+              "max_features": 80000,
+              "min_df": 2,
+              "ngram_range": [
+                1,
+                2
+              ],
+              "norm": "l2",
+              "preprocessor": null,
+              "smooth_idf": true,
+              "stop_words": null,
+              "strip_accents": null,
+              "sublinear_tf": true,
+              "token_pattern": "(?u)\\b\\w\\w+\\b",
+              "tokenizer": null,
+              "use_idf": true,
+              "vocabulary": null
+            }
+          }
+        ],
+        [
+          "classifier",
+          {
+            "class": "sklearn.naive_bayes.MultinomialNB",
+            "params": {
+              "alpha": 1.0,
+              "class_prior": null,
+              "fit_prior": true,
+              "force_alpha": true
+            }
+          }
+        ]
+      ],
+      "transform_input": null,
+      "verbose": false,
+      "tfidf": {
+        "class": "sklearn.feature_extraction.text.TfidfVectorizer",
+        "params": {
+          "analyzer": "word",
+          "binary": false,
+          "decode_error": "strict",
+          "dtype": "numpy.float64",
+          "encoding": "utf-8",
+          "input": "content",
+          "lowercase": true,
+          "max_df": 1.0,
+          "max_features": 80000,
+          "min_df": 2,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "norm": "l2",
+          "preprocessor": null,
+          "smooth_idf": true,
+          "stop_words": null,
+          "strip_accents": null,
+          "sublinear_tf": true,
+          "token_pattern": "(?u)\\b\\w\\w+\\b",
+          "tokenizer": null,
+          "use_idf": true,
+          "vocabulary": null
+        }
+      },
+      "classifier": {
+        "class": "sklearn.naive_bayes.MultinomialNB",
+        "params": {
+          "alpha": 1.0,
+          "class_prior": null,
+          "fit_prior": true,
+          "force_alpha": true
+        }
+      },
+      "tfidf__analyzer": "word",
+      "tfidf__binary": false,
+      "tfidf__decode_error": "strict",
+      "tfidf__dtype": "numpy.float64",
+      "tfidf__encoding": "utf-8",
+      "tfidf__input": "content",
+      "tfidf__lowercase": true,
+      "tfidf__max_df": 1.0,
+      "tfidf__max_features": 80000,
+      "tfidf__min_df": 2,
+      "tfidf__ngram_range": [
+        1,
+        2
+      ],
+      "tfidf__norm": "l2",
+      "tfidf__preprocessor": null,
+      "tfidf__smooth_idf": true,
+      "tfidf__stop_words": null,
+      "tfidf__strip_accents": null,
+      "tfidf__sublinear_tf": true,
+      "tfidf__token_pattern": "(?u)\\b\\w\\w+\\b",
+      "tfidf__tokenizer": null,
+      "tfidf__use_idf": true,
+      "tfidf__vocabulary": null,
+      "classifier__alpha": 1.0,
+      "classifier__class_prior": null,
+      "classifier__fit_prior": true,
+      "classifier__force_alpha": true
+    },
+    "word_lr": {
+      "memory": null,
+      "steps": [
+        [
+          "tfidf",
+          {
+            "class": "sklearn.feature_extraction.text.TfidfVectorizer",
+            "params": {
+              "analyzer": "word",
+              "binary": false,
+              "decode_error": "strict",
+              "dtype": "numpy.float64",
+              "encoding": "utf-8",
+              "input": "content",
+              "lowercase": true,
+              "max_df": 1.0,
+              "max_features": 80000,
+              "min_df": 2,
+              "ngram_range": [
+                1,
+                2
+              ],
+              "norm": "l2",
+              "preprocessor": null,
+              "smooth_idf": true,
+              "stop_words": null,
+              "strip_accents": null,
+              "sublinear_tf": true,
+              "token_pattern": "(?u)\\b\\w\\w+\\b",
+              "tokenizer": null,
+              "use_idf": true,
+              "vocabulary": null
+            }
+          }
+        ],
+        [
+          "classifier",
+          {
+            "class": "sklearn.linear_model._logistic.LogisticRegression",
+            "params": {
+              "C": 1.0,
+              "class_weight": null,
+              "dual": false,
+              "fit_intercept": true,
+              "intercept_scaling": 1,
+              "l1_ratio": 0.0,
+              "max_iter": 2000,
+              "n_jobs": null,
+              "penalty": "deprecated",
+              "random_state": 42,
+              "solver": "liblinear",
+              "tol": 0.0001,
+              "verbose": 0,
+              "warm_start": false
+            }
+          }
+        ]
+      ],
+      "transform_input": null,
+      "verbose": false,
+      "tfidf": {
+        "class": "sklearn.feature_extraction.text.TfidfVectorizer",
+        "params": {
+          "analyzer": "word",
+          "binary": false,
+          "decode_error": "strict",
+          "dtype": "numpy.float64",
+          "encoding": "utf-8",
+          "input": "content",
+          "lowercase": true,
+          "max_df": 1.0,
+          "max_features": 80000,
+          "min_df": 2,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "norm": "l2",
+          "preprocessor": null,
+          "smooth_idf": true,
+          "stop_words": null,
+          "strip_accents": null,
+          "sublinear_tf": true,
+          "token_pattern": "(?u)\\b\\w\\w+\\b",
+          "tokenizer": null,
+          "use_idf": true,
+          "vocabulary": null
+        }
+      },
+      "classifier": {
+        "class": "sklearn.linear_model._logistic.LogisticRegression",
+        "params": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 2000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 42,
+          "solver": "liblinear",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        }
+      },
+      "tfidf__analyzer": "word",
+      "tfidf__binary": false,
+      "tfidf__decode_error": "strict",
+      "tfidf__dtype": "numpy.float64",
+      "tfidf__encoding": "utf-8",
+      "tfidf__input": "content",
+      "tfidf__lowercase": true,
+      "tfidf__max_df": 1.0,
+      "tfidf__max_features": 80000,
+      "tfidf__min_df": 2,
+      "tfidf__ngram_range": [
+        1,
+        2
+      ],
+      "tfidf__norm": "l2",
+      "tfidf__preprocessor": null,
+      "tfidf__smooth_idf": true,
+      "tfidf__stop_words": null,
+      "tfidf__strip_accents": null,
+      "tfidf__sublinear_tf": true,
+      "tfidf__token_pattern": "(?u)\\b\\w\\w+\\b",
+      "tfidf__tokenizer": null,
+      "tfidf__use_idf": true,
+      "tfidf__vocabulary": null,
+      "classifier__C": 1.0,
+      "classifier__class_weight": null,
+      "classifier__dual": false,
+      "classifier__fit_intercept": true,
+      "classifier__intercept_scaling": 1,
+      "classifier__l1_ratio": 0.0,
+      "classifier__max_iter": 2000,
+      "classifier__n_jobs": null,
+      "classifier__penalty": "deprecated",
+      "classifier__random_state": 42,
+      "classifier__solver": "liblinear",
+      "classifier__tol": 0.0001,
+      "classifier__verbose": 0,
+      "classifier__warm_start": false
+    },
+    "char_lr": {
+      "memory": null,
+      "steps": [
+        [
+          "tfidf",
+          {
+            "class": "sklearn.feature_extraction.text.TfidfVectorizer",
+            "params": {
+              "analyzer": "char_wb",
+              "binary": false,
+              "decode_error": "strict",
+              "dtype": "numpy.float64",
+              "encoding": "utf-8",
+              "input": "content",
+              "lowercase": true,
+              "max_df": 1.0,
+              "max_features": 150000,
+              "min_df": 3,
+              "ngram_range": [
+                3,
+                5
+              ],
+              "norm": "l2",
+              "preprocessor": null,
+              "smooth_idf": true,
+              "stop_words": null,
+              "strip_accents": null,
+              "sublinear_tf": true,
+              "token_pattern": "(?u)\\b\\w\\w+\\b",
+              "tokenizer": null,
+              "use_idf": true,
+              "vocabulary": null
+            }
+          }
+        ],
+        [
+          "classifier",
+          {
+            "class": "sklearn.linear_model._logistic.LogisticRegression",
+            "params": {
+              "C": 1.0,
+              "class_weight": null,
+              "dual": false,
+              "fit_intercept": true,
+              "intercept_scaling": 1,
+              "l1_ratio": 0.0,
+              "max_iter": 2000,
+              "n_jobs": null,
+              "penalty": "deprecated",
+              "random_state": 42,
+              "solver": "liblinear",
+              "tol": 0.0001,
+              "verbose": 0,
+              "warm_start": false
+            }
+          }
+        ]
+      ],
+      "transform_input": null,
+      "verbose": false,
+      "tfidf": {
+        "class": "sklearn.feature_extraction.text.TfidfVectorizer",
+        "params": {
+          "analyzer": "char_wb",
+          "binary": false,
+          "decode_error": "strict",
+          "dtype": "numpy.float64",
+          "encoding": "utf-8",
+          "input": "content",
+          "lowercase": true,
+          "max_df": 1.0,
+          "max_features": 150000,
+          "min_df": 3,
+          "ngram_range": [
+            3,
+            5
+          ],
+          "norm": "l2",
+          "preprocessor": null,
+          "smooth_idf": true,
+          "stop_words": null,
+          "strip_accents": null,
+          "sublinear_tf": true,
+          "token_pattern": "(?u)\\b\\w\\w+\\b",
+          "tokenizer": null,
+          "use_idf": true,
+          "vocabulary": null
+        }
+      },
+      "classifier": {
+        "class": "sklearn.linear_model._logistic.LogisticRegression",
+        "params": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 2000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 42,
+          "solver": "liblinear",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        }
+      },
+      "tfidf__analyzer": "char_wb",
+      "tfidf__binary": false,
+      "tfidf__decode_error": "strict",
+      "tfidf__dtype": "numpy.float64",
+      "tfidf__encoding": "utf-8",
+      "tfidf__input": "content",
+      "tfidf__lowercase": true,
+      "tfidf__max_df": 1.0,
+      "tfidf__max_features": 150000,
+      "tfidf__min_df": 3,
+      "tfidf__ngram_range": [
+        3,
+        5
+      ],
+      "tfidf__norm": "l2",
+      "tfidf__preprocessor": null,
+      "tfidf__smooth_idf": true,
+      "tfidf__stop_words": null,
+      "tfidf__strip_accents": null,
+      "tfidf__sublinear_tf": true,
+      "tfidf__token_pattern": "(?u)\\b\\w\\w+\\b",
+      "tfidf__tokenizer": null,
+      "tfidf__use_idf": true,
+      "tfidf__vocabulary": null,
+      "classifier__C": 1.0,
+      "classifier__class_weight": null,
+      "classifier__dual": false,
+      "classifier__fit_intercept": true,
+      "classifier__intercept_scaling": 1,
+      "classifier__l1_ratio": 0.0,
+      "classifier__max_iter": 2000,
+      "classifier__n_jobs": null,
+      "classifier__penalty": "deprecated",
+      "classifier__random_state": 42,
+      "classifier__solver": "liblinear",
+      "classifier__tol": 0.0001,
+      "classifier__verbose": 0,
+      "classifier__warm_start": false
+    }
+  },
+  "reload_checks": {
+    "word_nb": {
+      "n": 20,
+      "max_absolute_error": 0.0,
+      "local_explanations_checked_after_reload": 3,
+      "passed": true
+    },
+    "word_lr": {
+      "n": 20,
+      "max_absolute_error": 0.0,
+      "local_explanations_checked_after_reload": 3,
+      "passed": true
+    },
+    "char_lr": {
+      "n": 20,
+      "max_absolute_error": 0.0,
+      "local_explanations_checked_after_reload": 3,
+      "passed": true
+    }
+  },
+  "bundle_reload_max_absolute_error": 0.0,
+  "model_text_builder": {
+    "function": "normalization_schema.make_model_text",
+    "input": "parse_email subject/body_text",
+    "feature_allowlist": [
+      "model_text"
+    ]
+  },
+  "test_not_evaluated": true,
+  "closed_artifacts_from_manifest_only": {
+    "records.jsonl": {
+      "sha256": "532d0ac3ba20a53b1a96da192f26f0855c74e9e34e11b025aa6a319207b6c66e",
+      "rows": 60650,
+      "size_bytes": 302163737
+    },
+    "duplicate_groups.jsonl": {
+      "sha256": "4fbefea52bec34bc73d3530c4e3138139cd1e04eb56c4baa6e1ee800cdef775a",
+      "rows": 55070,
+      "size_bytes": 53935843
+    },
+    "quarantine.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rows": 0,
+      "size_bytes": 0
+    },
+    "exclusions.jsonl": {
+      "sha256": "6b113de55ab57aee87624241211e8810915121a948b9e89fb043b4648b179f1d",
+      "rows": 108,
+      "size_bytes": 47176
+    },
+    "splits/spam_email/test.jsonl": {
+      "sha256": "4d95201680de2b8cafadbe99f724ead42e9046702617b999a0de1b110e200065",
+      "rows": 1276,
+      "size_bytes": 10501737
+    },
+    "splits/russian_auxiliary/train.jsonl": {
+      "sha256": "34bf49e3377a55386cd569b3ce0bd368234b0a64f183c368f84b2a4303c02210",
+      "rows": 27953,
+      "size_bytes": 79974997
+    },
+    "splits/russian_auxiliary/validation.jsonl": {
+      "sha256": "3426729222b9d374e035cede87b764b53aed00d6bc533b9a575dbcd861f72e39",
+      "rows": 5990,
+      "size_bytes": 17106984
+    },
+    "splits/russian_auxiliary/test.jsonl": {
+      "sha256": "853ca027bff6b0aaca3d544d0579ab9833ae28bfb9e4821f27e4f22f43efae66",
+      "rows": 5990,
+      "size_bytes": 17064348
+    },
+    "splits/modern_spam_train_candidates.jsonl": {
+      "sha256": "0513702d8f000c1787482ac19ee6e4654531433e6d004b58ea512d7d60284c68",
+      "rows": 3088,
+      "size_bytes": 26911870
+    },
+    "splits/modern_spam_2025_period_challenge.jsonl": {
+      "sha256": "9bac403a84930015d4b600531c62bba86ea99e3b98477fb78e8abceec615591e",
+      "rows": 600,
+      "size_bytes": 4795678
+    },
+    "splits/phishing_train_candidates.jsonl": {
+      "sha256": "a9ba229760d6b6e409bc8ae792697953cec1f2ffa609fe00da68f69bad1490a8",
+      "rows": 368,
+      "size_bytes": 2657622
+    },
+    "splits/phishing_positive_test.jsonl": {
+      "sha256": "1fa4945d364a9b89f614c3f1790ec6c063ba4690ce69460203d53ad182d0eb9d",
+      "rows": 446,
+      "size_bytes": 3251543
+    },
+    "reserves/modern_spam_future_reserve.jsonl": {
+      "sha256": "c5ade251497109af70d8ab5ff9e2ce0bf85b4bcedd61444dad76ddeb7cb06158",
+      "rows": 3018,
+      "size_bytes": 28879684
+    }
+  },
+  "verification": {
+    "save_reload": "passed",
+    "CLI_smoke": {
+      "model_id": "char_lr",
+      "run_id": "20261011T110222Z-8b19548aea-6c869e96",
+      "spam_score": 0.28393031939488206,
+      "threshold": 0.3037252359712881,
+      "threshold_policy": "conservative_validation_fpr_1pct",
+      "spam_verdict": 0,
+      "phishing": "not_available",
+      "category": "not_available",
+      "active_features": 0,
+      "model_text_char_count": 104,
+      "builder_transformations": [],
+      "parser_warnings": [],
+      "limitations": [
+        "historical_English_text_only_baseline; language support not established",
+        "spam_score is not a calibrated guarantee",
+        "empty_vector; intercept/prior prediction retained",
+        "Cyrillic_present; Russian support not evaluated",
+        "no_ASCII_Latin_letters; language unknown/out_of_scope"
+      ],
+      "fit_performed": false,
+      "data_access_log": {
+        "data/examples/service_notice.eml": 1
+      },
+      "cli_subprocess_verified": true
+    },
+    "data_access_log": {
+      "data/processed/splits/manifest.json": 1,
+      "data/processed/splits/spam_email/train.jsonl": 2,
+      "data/processed/splits/spam_email/validation.jsonl": 2,
+      "data/examples/service_notice.eml": 3
+    }
+  }
+}

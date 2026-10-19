@@ -1,0 +1,8 @@
+# Isolated .venv-decision only; first install CUDA torch from official cu130 index.
+torch==2.10.0+cu130
+laya==0.3.20
+transformers==5.19.0
+tokenizers==0.23.3
+huggingface_hub==2.2.0
+safetensors==0.8.0
+psutil==7.2.2

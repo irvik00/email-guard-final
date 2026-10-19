@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "seed": 42,
+  "checkpoint": {"model_id": "convaiinnovations/laya", "subfolder": "multilingual", "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148"},
+  "questions": {"spam": {"type": "noul", "instructions": "Is this message unsolicited spam?"}},
+  "input": {"builder": "clean_builder_v2", "context_limit": 1024, "head_max_len": 256, "state_token_cap": 700, "mask_policy": "replace tokenizer mask literal with space before offset-token prefix; same for all candidates"},
+  "parts": {"fit": 0.70, "dev": 0.15, "calibration": 0.15},
+  "selection": {"fit_per_class": {"spam_email": 1000, "russian_auxiliary": 2000}, "dev_per_domain": 300, "calibration_per_domain": 500, "order": "sha256 canonical JSON [42,purpose,record_id]; largest remainder source/class quotas for dev/calibration"},
+  "training": {"optimizer": "AdamW", "learning_rate": 0.0001, "weight_decay": 0.01, "grad_clip": 1.0, "microbatch": 2, "accumulation": 8, "max_steps": 300, "warmup_steps": 15, "smoke_steps": 3, "dev_steps": [0,100,200,300], "train_seconds_limit": 7200, "technical_seconds_limit": 5400, "oom_retries": 1, "trainable_prefixes": ["head.", "type_emb.", "scorer."], "frozen_prefixes": ["encoder.", "act_head."], "checkpoint_selection": "among trained checkpoints: maximum mean domain F1 at 0.5, then minimum historical FP, then earliest step; initial is a reference only", "order": "one seeded shuffle of selected fit; smoke first 3 optimizer steps count towards the same 300-step run"},
+  "calibration": {"method": "scalar binary NLL: bracketed golden-section search over log(T), 100 iterations, calibration only", "unconstrained_range": [0.01,1000.0], "sdk_range": [0.5,5.0], "bins": 10, "clear_temperature_by_options": true},
+  "threshold": {"rule": "max mean domain F1 among unique calibrated dev scores with observed historical FPR<=0.01 and nonzero recall in both domains; ties fewer historical FP, then larger threshold", "fallback": 0.5, "not_a_guarantee": true},
+  "evaluation": {"phase": "after candidate manifest frozen", "batch_size": 2, "threshold_default_e0": 0.3037252359712881, "failure_policy": "report coverage and failures separately; never convert missing response to ham", "latency": "warm per-record single-item forward on final validation; preparation and cold load separate"},
+  "default_model": "models/day3/baseline_bundle.joblib",
+  "not_default": true,
+  "ru_label_status": "source_intended_unverified",
+  "closed": "all test/challenge/teacher/frozen reserve/Nazario/modern candidates/needs_review/full parquet; no day2 pipeline"
+}
