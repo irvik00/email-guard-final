@@ -72,6 +72,14 @@ def create_app(engine=None, enable_laya=True):
     def index():
         return FileResponse(STATIC / 'index.html', media_type='text/html')
 
+    @application.get('/evaluation', include_in_schema=False)
+    def evaluation():
+        return FileResponse(STATIC / 'evaluation.html', media_type='text/html')
+
+    @application.get('/evaluation-data.json', include_in_schema=False)
+    def evaluation_data():
+        return FileResponse(STATIC / 'evaluation.json', media_type='application/json')
+
     @application.get('/assets/app.js', include_in_schema=False)
     def javascript():
         return FileResponse(STATIC / 'app.js', media_type='text/javascript')
