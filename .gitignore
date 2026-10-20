@@ -13,3 +13,6 @@ data/
 reports/deployment/public-smoke-*.json
 !reports/deployment/public-smoke-*-linux-cpu-*.json
 # Keep deployment/wheelhouse-linux/*.whl: the locked offline Docker build uses them.
+/DEFENSE_QA.md
+/DEFENSE_QUICK_START.md
+/PRESENTATION_HANDOFF.md

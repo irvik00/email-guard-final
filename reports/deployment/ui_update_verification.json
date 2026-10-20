@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "utc": "2026-10-19T20:30:57.403368+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "unit_app_tests": 18,
+  "public_deployment_tests": 4,
+  "category_tests": 3,
+  "HTTP_smoke": {
+    "status": "passed",
+    "checks": 20,
+    "report": "/workspace/scratch/91da9bd86713/render_work/email_guard_render/reports/deployment/public-smoke-20261019T203057169940Z-linux-cpu-ui.json",
+    "max_E0_score_delta": 0.0
+  },
+  "public_origin_real_HTTP_examples": 6,
+  "served_UI_assets_and_headers": 4,
+  "DOM_harness": {
+    "status": "passed",
+    "synthetic_results": 6,
+    "checks": [
+      "real API result rendering",
+      "rule labels",
+      "real score bars",
+      "unavailable modes disabled",
+      "untrusted subject stays text",
+      "error rendering"
+    ],
+    "scope": "DOM execution harness; not a visual browser/layout inspection"
+  },
+  "actual_Render_deployment": false,
+  "visual_browser_layout_checked": false,
+  "ML_quality_benchmark_or_category_evaluation": false
+}

@@ -141,4 +141,4 @@ Dockerfile, compose.yaml   CPU-only контейнер; baseline не завис
 
 Это команды реального нового обучения/оценки, не команды демонстрации. Повторное открытие уже измеренных tests не возвращает им независимость. Внутренние ограничения доступа и markers нельзя снимать ради удобного повтора. Не скачивать/восстанавливать security_blocked 2026-09 и не менять Defender. Детали выполненных шагов — `docs/DAY5_REPRODUCTION.md`, `docs/EXTRA_EXPERIMENTS_REPRODUCTION.md`, `docs/DAY3_BASELINES.md`; компактные сохранённые оценки — `reports/release/FINAL_TABLES.md`. Новые исследования/пороги/вопросы в релизе не добавлены.
 
-Материалы защиты: [PRESENTATION_HANDOFF.md](PRESENTATION_HANDOFF.md), [DEFENSE_QA.md](DEFENSE_QA.md), [RELEASE_STATUS.md](RELEASE_STATUS.md).
+[RELEASE_STATUS.md](RELEASE_STATUS.md)

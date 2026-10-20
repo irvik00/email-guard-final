@@ -22,16 +22,8 @@
       "bytes": 88
     },
     ".gitignore": {
-      "sha256": "eaf0f808e5a1c7b582fe291229ccb03fe00ed1db76d3e96e59f2c2a89ce637a8",
-      "bytes": 353
-    },
-    "DEFENSE_QA.md": {
-      "sha256": "f0ddef8cb4d87b4859fd383e7708137bf33ebd7a79f5f5060eecdb5551b72ddb",
-      "bytes": 12683
-    },
-    "DEFENSE_QUICK_START.md": {
-      "sha256": "32b871f6014711d051f9d4d2691b53afb6cc00a315ac15b14accd7ed3721595b",
-      "bytes": 5861
+      "sha256": "64c213a5ef245c8ba2d46a13d8b8b576bd00cd25c814a37d5e9b281791b74445",
+      "bytes": 417
     },
     "DEPLOYMENT_CHANGES.md": {
       "sha256": "d0ce834ef41c3e5766c8ca437f96cc79f7a36fd4f1da1b2097d66b1cfeacffb7",
@@ -49,17 +41,13 @@
       "sha256": "6d141568bf7ff7bfda470dd62f1f0737373f5540fef3d425bcc56871f2839373",
       "bytes": 19536
     },
-    "PRESENTATION_HANDOFF.md": {
-      "sha256": "c7eadd08502617634b3562973f0022987ec5a83d012b4fd08362d5a1664ef31a",
-      "bytes": 9969
-    },
     "PUBLISH_STEPS.md": {
       "sha256": "d857fdac25c74464ea4b3c2973504ad1332055c6d29d6764121d7697e3397048",
       "bytes": 15377
     },
     "README.md": {
-      "sha256": "c1cff518307585aa8212142328a4175859fa7d6bfcd1c66c89aed96b7e406fdb",
-      "bytes": 17018
+      "sha256": "8dee728526f3ccbfa197a1d89831eb89ef4ebedf30674a24fbbac09dfdc5fd67",
+      "bytes": 16900
     },
     "RELEASE_STATUS.md": {
       "sha256": "bbfc8329395aa262c7068e0aaaf214089c37e8440ba0e615d8673c60146a7d1f",
@@ -470,8 +458,8 @@
       "bytes": 5344
     },
     "scripts/build_submission.py": {
-      "sha256": "cb7a231c2965b6f0fb83ad5f8198e65a1662a8886976e27d0ee63cbe1377a23c",
-      "bytes": 6409
+      "sha256": "b964d56bfddc934213b4c0444f2d1ceec59f2c9c3c147c939d6eba05a746efe2",
+      "bytes": 6367
     },
     "scripts/export_final_tables.py": {
       "sha256": "6d7391782d08b55f6958a47b19b979e493623c826e3a2370ecf509fe0e0369bf",
@@ -905,5 +893,11 @@
   "UI_update": "UI_UPDATE.md",
   "ML_models_changed": false,
   "category_method": "keyword_rules_v1; unvalidated topic hints, separate from ML decision",
-  "defense_update": "DEFENSE_QUICK_START.md"
+  "public_cleanup": {
+    "removed_public_docs": [
+      "DEFENSE_QA.md",
+      "DEFENSE_QUICK_START.md",
+      "PRESENTATION_HANDOFF.md"
+    ]
+  }
 }

@@ -13,7 +13,7 @@ sys.path.insert(0,str(ROOT))
 from app.contract import contract,sha_file
 from scripts.prepare_model_artifacts import prepare
 
-DOCS=['README.md','MODEL_CARD.md','MODEL_ARTIFACTS.md','PRESENTATION_HANDOFF.md','DEFENSE_QA.md','RELEASE_STATUS.md']
+DOCS=['README.md','MODEL_CARD.md','MODEL_ARTIFACTS.md','RELEASE_STATUS.md']
 DIRECT=['Dockerfile','.dockerignore','compose.yaml','.env.example','requirements-app.in','requirements-app.lock.txt',
         'requirements-app-laya.lock.txt','requirements-docker.lock.txt','requirements.txt','requirements-lock.txt',
         'requirements-decision.txt','requirements-decision-lock.txt']
