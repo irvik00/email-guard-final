@@ -30,9 +30,7 @@
 - Независимый `reload_day5.py` дополнительно сравнил оба сырых `false/true` logits, score и SDK T на 16 internal-dev records на candidate (4 на domain/class, фиксированный SHA-отбор, не по ошибкам); это отдельный subprocess без fit.
 - Этот reload не входит в три artifact-only команды выше, поскольку выполняет небольшой реальный inference на internal dev; full validation не повторяется.
 - Для собственных писем: см. `PERSONAL_EMAIL_REVIEW.md` и `personal_email_manifest_template.csv`; `data/personal_review` отдельно и gitignored; пустой шаблон → `templates_ready`.
-- Сегодня никаких модельных оценок/обучения на собственных письмах не было; сначала пользователь фиксирует review/dev или отложенную диагностическую роль.
 - CSV/parser command — в документе; лимит 20 MiB, статический MIME, no network.
-- Для разбора и презентации передаются только `DAY5_STATUS.md`, `training.md`, `calibration.md`, `comparison.md`, `error_analysis.md` и `PRESENTATION_NOTES_DAY5.md`.
 - Weights, private visible fragments и большие JSONL не передавались.
 - Validation использовалась ранее; современная почта/финальная независимая оценка остаются следующими этапами.
 - Default E0 с порогом `0.3037252359712881` не менялся.
