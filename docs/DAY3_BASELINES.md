@@ -30,4 +30,3 @@
 - Запущены новые тесты и подходящие существующие тесты на фикстурах, затем реальные 15 CV fit для трёх моделей, 3 fit на полном train, validation, выбор порога, отчёты, reload и CLI smoke.
 - Подготовлены артефакты: `src/train_baselines.py`, `src/predict_email.py`, конфигурация, актуальные requirements, `docs/DAY3_EXPERIMENTS.md`, `models/day3/` (три Pipeline, baseline bundle, `model_manifest.json`), `reports/day3/experiments.md/.json`, `thresholds.md/.json`, `error_analysis.md`, `predictions/` (OOF и validation компактно), `reports/DAY3_STATUS.md`.
 - Исходники и splits не изменялись; сырые письма и приватные отчёты не публиковались; артефакты моделей и предсказаний исключены из git по существующей политике; ничего не пушилось.
-- Для разбора пользователю предназначены `reports/DAY3_STATUS.md` и три Markdown-отчёта: `experiments.md`, `thresholds.md`, `error_analysis.md`.
